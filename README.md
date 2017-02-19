@@ -37,6 +37,9 @@ http://doc.scalingo.com/app/command-line-tool.html
 in git bash set path
 http://superuser.com/questions/602872/how-do-i-modify-my-git-bash-profile-in-windows
 
+add user authentication
+meteor add accounts-ui accounts-password
+meteor add session
 
 
 

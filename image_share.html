@@ -5,9 +5,15 @@
 <body>
 {{> image_add_form}}
 
-  <h1>Welcome back Jurgen!</h1>
-  <div class="container">
-  {{> images}}
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        {{> loginButtons}}
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Welcome back {{username}} - FOTO app!</h1>   
+    {{> images}}
 </div>
 </body>
  
@@ -38,13 +44,15 @@
   </template>
 
 <template name="images">
-  <button class="btn btn-success js-show-image-form">add image</button>
-	<div class="row">
+   {{#if currentUser}} <!-- only show the add image button to logged in users -->
+        <button class="btn btn-success js-show-image-form">add image</button>
+	{{/if}}
+    <div class="row">
   {{#each images}}
   <div class="col-xs-12 col-md-3" id="{{_id}}">
   	<div class="thumbnail">
 
-  	 	<img class="js-image" src="{{img_src}}" 
+  	 	<img class="js-image thumbnail-img" src="{{img_src}}" 
   		alt="{{img_alt}}" /> 
   			
   		<div class="caption">
